@@ -1,9 +1,11 @@
 use csv;
 use std::error::Error;
 
-fn read_from_file(filename: &str) -> Result<(), Box<dyn Error>> {} // handle realtime errors
+fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
+    let mut reader = csv::Reader::from_path(path)?;
+} // handle realtime errors
 fn main() {
     if let Err(e) = read_from_file("./csv-file/maincsvforrust.csv") {
-        println!("{}", e); // println! fineshed
+        eprintln!("{}", e); // println! fineshed
     }
 }
