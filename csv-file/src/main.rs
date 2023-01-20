@@ -10,10 +10,10 @@ fn read_from_file(path: &str) -> Result<(), Box<dyn Error>> {
         println!("{:?}", record);
     }
 
-    ok(())
+    Ok(())
 } // handle realtime errors
 fn main() {
-    if let Err(e) = read_from_file("./csv-file/maincsvforrust.csv") {
+    if let Err(e) = read_from_file("/csv-file/Book1.csv") {
         eprintln!("{}", e); // println! fineshed
     }
 }
